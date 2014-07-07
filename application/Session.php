@@ -64,7 +64,7 @@ class Session
         if(!Session::get('autenticado')){
             return FALSE;
         }
-        
+        Session::tiempo();
         if(Session::getLevel($level) > Session::getLevel(Session::get('level'))){
             return FALSE;
         }
@@ -82,6 +82,69 @@ class Session
             throw new Exception('Error de acceso');
         }  else {
             return $rol[$level];
+        }
+    }
+    
+    public static function accesoEstricto(array $level, $noAdmin = FALSE)
+    {
+        if(!Session::get('autenticado')){
+            header('location:' . BASE_URL . 'error/access/5050');
+            exit;
+        }
+        Session::tiempo();
+        if($noAdmin == false){
+            if(Session::get('level') == 'admin'){
+                return;
+            }
+        }
+        
+        if(count($level)){
+            if(in_array(Session::get('level'), $level)){
+                return;
+            }
+        }
+        
+        header('location:' . BASE_URL . 'error/access/5050');
+        
+    }
+    
+    public static function accesoViewEstricto(array $level, $noAdmin = FALSE){
+        if(!Session::get('autenticado')){
+            return false;
+        }
+        Session::tiempo();
+        if($noAdmin == false){
+            if(Session::get('level') == 'admin'){
+                return true;
+            }
+        }
+        
+        if(count($level)){
+            if(in_array(Session::get('level'), $level)){
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    public static function tiempo(){
+        
+        if((!Session::get('tiempo')) || (!defined('SESSION_TIME'))){
+            throw new Exception('No se ha definido el timpo de sesion');
+        }
+        
+        if(SESSION_TIME == 0){
+            return;
+        }
+        
+        if((time() - Session::get('tiempo')) > (SESSION_TIME * 60)){
+            Session::destroy();
+            header('location:' . BASE_URL . 'error/access/8080');
+            
+        }
+        else{
+            Session::set('tiempo', time());
         }
     }
 }

@@ -7,7 +7,7 @@
     define('APP_NAME', 'Mi Framwork');
     define('APP_SLOGAN', 'Mi primer Framework php y mvc.....');
     define('APP_COMPANY', 'www.jcbcsystems.com');
-    
+    define('SESSION_TIME', 1);
     
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');

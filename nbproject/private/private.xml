@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/opt/lampp/htdocs/mvc/application/Session.php</file>
+            <file>file:/opt/lampp/htdocs/mvc/index.php</file>
+            <file>file:/opt/lampp/htdocs/mvc/controllers/errorController.php</file>
+            <file>file:/opt/lampp/htdocs/mvc/views/error/index.phtml</file>
+            <file>file:/opt/lampp/htdocs/mvc/views/post/index.phtml</file>
+        </group>
+>>>>>>> dfd3ceaf2e644b0bd918b2069a1f81bd4f721517
     </open-files>
 </project-private>

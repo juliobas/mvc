@@ -48,4 +48,5 @@
        </div>
         <div id="content">
             <noscript><p>Para el correcto funcionamiento debe tener el soporte de javascript habilitado</p></noscript>
+                    <div id="error"><?php if(isset($this->_error)) echo $this->_error; ?></div>
 

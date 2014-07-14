@@ -48,5 +48,9 @@
        </div>
         <div id="content">
             <noscript><p>Para el correcto funcionamiento debe tener el soporte de javascript habilitado</p></noscript>
-                    <div id="error"><?php if(isset($this->_error)) echo $this->_error; ?></div>
-
+            <?php if(isset($this->_error)): ?>
+                <div id="error"><?php echo $this->_error; ?></div>
+            <?php endif; ?> 
+            <?php if(isset($this->_mensaje)): ?>
+                <div id="mensaje"><?php echo $this->_mensaje; ?></div>
+            <?php endif; ?> 

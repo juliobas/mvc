@@ -11,6 +11,10 @@ class loginController extends Controller
     
     public function index()
     {
+        if (Session::get('autenticado')) 
+        {
+            $this->redireccionar();
+        }
         $this->_view->titulo = 'Iniciar Sesion';
         
         if($this->getInt('enviar') == 1){
@@ -50,8 +54,7 @@ class loginController extends Controller
             Session::set('usuario', $row['usuario']);
             Session::set('id_usuario', $row['id']);
             Session::set('tiempo', time());
-            print_r($_SESSION);
-            //this->redireccionar();
+            $this->redireccionar();
         }
         
         $this->_view->renderizar('index','login');
@@ -63,6 +66,7 @@ class loginController extends Controller
         Session::destroy();
         $this->redireccionar();
     }
+
 }
 
 ?>

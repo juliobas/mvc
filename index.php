@@ -16,7 +16,8 @@ try{
     require_once APP_PATH . 'Registro.php';
     require_once APP_PATH . 'Database.php';
     require_once APP_PATH . 'Session.php';
-
+    require_once APP_PATH . 'Hash.php';
+  
     Session::init();
 
     Bootstrap::run(new Request);

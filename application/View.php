@@ -39,6 +39,11 @@ class View
                 'titulo' => 'Iniciar Sesion',
                 'enlace' => BASE_URL . 'login'
             );
+            $menu[] = array (
+                'id' => 'registro',
+                'titulo' => 'Registrar Usuario',
+                'enlace' => BASE_URL . 'registro'
+            );
         }
         
         $js = array();

@@ -16,39 +16,24 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `posts`
+-- Dumping data for table `posts`
 --
 
-DROP TABLE IF EXISTS `posts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `posts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(150) NOT NULL,
-  `cuerpo` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+LOCK TABLES `posts` WRITE;
+/*!40000 ALTER TABLE `posts` DISABLE KEYS */;
+INSERT INTO `posts` VALUES (2,'titulo2','cuerpo2           \r\n        '),(10,'titulo10','cuerpo10'),(12,'titulo12','cuerpo12'),(15,'ddddd','ssdddd'),(16,'titulo13','wdwdd'),(17,'titulo13','efedfde'),(18,'titulo18','cuerpo18'),(19,'prueba','prueba');
+/*!40000 ALTER TABLE `posts` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Table structure for table `usuarios`
+-- Dumping data for table `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `usuarios` (
-  `id` int(4) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `usuario` varchar(30) NOT NULL,
-  `pass` varchar(40) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `role` enum('admin','especial','usuario') NOT NULL,
-  `estado` tinyint(4) NOT NULL,
-  `fecha` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'nombre1','admin','bf6148185ebd3e2f9cb3280cf2aa161135218047','admin@localhost.com','admin',1,'0000-00-00 00:00:00'),(2,'usuario1','usuario1','bf6148185ebd3e2f9cb3280cf2aa161135218047','usuario1@localhost.com','usuario',1,'2014-07-11 23:23:09'),(3,'usuario2','usuario2','bf6148185ebd3e2f9cb3280cf2aa161135218047','usuario2@localhost.com','usuario',1,'2014-07-11 23:25:58'),(4,'usuario3','usuario3','bf6148185ebd3e2f9cb3280cf2aa161135218047','usuario3@localhost.com','usuario',1,'2014-07-12 00:13:06');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -59,4 +44,4 @@ CREATE TABLE `usuarios` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-07-20 22:17:37
+-- Dump completed on 2014-07-20 22:18:04

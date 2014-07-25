@@ -1,5 +1,5 @@
 <?php
-    define('BASE_URL', 'http://localhost/mvc/');
+    define('BASE_URL', 'http://programas/mvc/');
     define('DEFAULT_CONTROLLER', 'index');
     define('DEFAULT_LAYOUT', 'default');
     
